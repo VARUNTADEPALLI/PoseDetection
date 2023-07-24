@@ -1,7 +1,7 @@
 import mediapipe as mp
 import cv2
 import streamlit as st
-from streamlit_webrtc import webrtc_streamer, VideoTransformerBase,RTCConfiguration
+from streamlit_webrtc import webrtc_streamer, VideoTransformerBase
 
 st.set_page_config(page_title="Pose Detection", page_icon=":shark:", layout="centered", initial_sidebar_state="auto", menu_items=None)
 st.set_option('deprecation.showfileUploaderEncoding', False)
@@ -49,7 +49,7 @@ class VideoTransformer(VideoTransformerBase):
 def main():
     webrtc_streamer(key="example", video_transformer_factory=VideoTransformer,
                    rtc_configuration={  # Add this line
-                            RTCConfiguration({"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]})
+                            "iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]
                     }
     )
 
