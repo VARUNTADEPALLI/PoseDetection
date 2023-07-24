@@ -47,7 +47,11 @@ class VideoTransformer(VideoTransformerBase):
 
 
 def main():
-    webrtc_streamer(key="example", video_transformer_factory=VideoTransformer)
+    webrtc_streamer(key="example", video_transformer_factory=VideoTransformer,
+                   rtc_configuration={  # Add this line
+                        "iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]
+                   }
+    )
 
 
 if __name__ == "__main__":
