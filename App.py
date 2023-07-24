@@ -1,7 +1,7 @@
 import mediapipe as mp
 import cv2
 import streamlit as st
-from streamlit_webrtc import webrtc_streamer, VideoTransformerBase
+from streamlit_webrtc import webrtc_streamer, VideoTransformerBase,RTCConfiguration
 
 st.set_page_config(page_title="Pose Detection", page_icon=":shark:", layout="centered", initial_sidebar_state="auto", menu_items=None)
 st.set_option('deprecation.showfileUploaderEncoding', False)
